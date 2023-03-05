@@ -16,6 +16,7 @@ public class ContaPoupanca extends ContaBancaria {
 	}
 
 	// METODOS
+	@Override
 	public void verSaldo() {
 		linhaTracejada();
 		calcularNovoSaldo();

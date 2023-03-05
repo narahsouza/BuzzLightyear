@@ -17,6 +17,7 @@ public class ContaEspecial extends ContaBancaria {
 	
 	// METODOS
 	
+	@Override
 	public void sacar() {
 		linhaTracejada();
 		System.out.println("Valor do saque: ");
