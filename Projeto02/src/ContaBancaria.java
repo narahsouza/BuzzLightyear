@@ -29,6 +29,7 @@ public class ContaBancaria {
 				System.out.println("Proximo cliente a ser atendido:");
 				dadosCliente();
 				opcoes02();
+				break;
 			case 2:
 				break;
 		}
@@ -45,12 +46,15 @@ public class ContaBancaria {
 			case 1:
 				verSaldo();
 				opcoes02();
+				break;
 			case 2:
 				sacar();
 				opcoes02();
+				break;
 			case 3:				
 				depositar();
 				opcoes02();
+				break;
 			case 4:
 				linhaTracejada();
 				System.out.println("Atendimento finalizado.");
