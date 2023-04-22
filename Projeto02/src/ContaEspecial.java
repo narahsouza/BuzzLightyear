@@ -1,6 +1,5 @@
 public class ContaEspecial extends ContaBancaria {
 
-
     // ATRIBUTOS
     float limite; // redefinição do método sacar, permitindo saldo negativo até o valor limite
 
@@ -17,10 +16,6 @@ public class ContaEspecial extends ContaBancaria {
 
     // METODOS
 
-
-
-
-
     public void sacarEspesial() {
         linhaTracejada();
         System.out.println("Caro " + cliente + ", qual valor deseja sacar?");
@@ -29,7 +24,6 @@ public class ContaEspecial extends ContaBancaria {
 
             float resultado = saldo - valSacar;
             System.out.println("Saldo disponível: " + resultado);
-
 
             if (resultado < limite) {
                 System.out.println("Saldo disponível para emprestimo: $ 50,00");
@@ -41,9 +35,6 @@ public class ContaEspecial extends ContaBancaria {
             System.out.println("Efetuado com sucesso!");
             float resultado = saldo - valSacar;
             System.out.println("Saldo disponível: " + resultado);
-
         }
     }
-
-
 }
