@@ -49,7 +49,7 @@ public class Lanchonete {
         Linha.tracejada();
         System.out.println("Valor total da conta: R$" + precoFinal);
         
-        // 07ENCERRA O METODO SCANNER
+        // 07 - ENCERRA O METODO SCANNER
         scanner.close();
         
         // 08 - FINALIZA O ATENDIMENTO ;*
