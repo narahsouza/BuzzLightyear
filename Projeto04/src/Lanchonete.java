@@ -5,7 +5,7 @@ public class Lanchonete {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // 00 - TITULO LINDO
+        // 00 - TITULO LINDO <3
         System.out.println("LANCHONETE DA NARAH :)");
         Linha.tracejada();
         
@@ -24,7 +24,18 @@ public class Lanchonete {
         // 02 - CLIENTE ESCOLHE LANCHE
         Linha.tracejada();
         System.out.println("Digite o nome do lanche desejado:");
-        Lanche lancheSelecionado = Lanche.valueOf(scanner.nextLine().toUpperCase());
+        Lanche lancheSelecionado;
+        
+        // 03 - BLOCO TRY-CATCH PARA EXIBIR MENSAGEM EM CASO DE ERRO DE DIGITACAO
+        try {
+            lancheSelecionado = Lanche.valueOf(scanner.nextLine().toUpperCase());
+            
+        } catch (IllegalArgumentException e) {
+            System.out.println("Opcao de lanche invalida!");
+            System.out.println("Por favor, inicie o pedido novamente.");
+            scanner.close();
+            return;
+        }
         
         /*
          * LEMBRETE SOBRE O TRECHO ACIMA:
@@ -32,30 +43,39 @@ public class Lanchonete {
          * "toUpperCase()" CONVERTE PARA MAIUSCULAS
         */
         
-        // 03 - EXIBE OPCOES DE BEBIDA
+        // 04 - EXIBE OPCOES DE BEBIDA
         Linha.tracejada();
         System.out.println("Opcoes de bebidas:");
         for (Bebida b : Bebida.values()) {
             System.out.println(b.name() + " - R$" + b.getPreco());
         }
 
-        // 04 - CLIENTE ESCOLHE BEBIDA
+        // 05 - CLIENTE ESCOLHE BEBIDA
         Linha.tracejada();
         System.out.println("Digite o nome da bebida desejada:");
-        Bebida bebidaSelecionada = Bebida.valueOf(scanner.nextLine().toUpperCase());
+        Bebida bebidaSelecionada;
+        
+        // 06 - BLOCO TRY-CATCH PARA EXIBIR MENSAGEM EM CASO DE ERRO DE DIGITACAO
+        try {
+            bebidaSelecionada = Bebida.valueOf(scanner.nextLine().toUpperCase());
+            
+        } catch (IllegalArgumentException e) {
+            System.out.println("Opcao de bebida invalida!");
+            System.out.println("Por favor, inicie o pedido novamente.");
+            scanner.close();
+            return;
+        }
 
-        // 05 - CALCULA O VALOR DA CONTA
+        // 07 - CALCULA O VALOR DA CONTA
         double precoFinal = lancheSelecionado.getPreco() + bebidaSelecionada.getPreco();
         Linha.tracejada();
         System.out.println("Valor total da conta: R$" + precoFinal);
         
-        // 07 - ENCERRA O METODO SCANNER
+        // 08 - ENCERRA O METODO SCANNER
         scanner.close();
         
-        // 08 - FINALIZA O ATENDIMENTO ;*
+        // 09 - FINALIZA O ATENDIMENTO ;*
         Linha.tracejada();
         System.out.println("VOLTE SEMPRE <3");
-
-        
     }
 }
